@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Temakeria Universitária · Outubro, Novembro e Dezembro</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<style>
+  :root {
+    --ground:#F1F2F7; --raised:#FBFBFE; --raised-2:#F4F5FA; --ink:#14161F; --ink-soft:#474C5E; --ink-faint:#7A8197;
+    --line:#DCDFEA; --line-soft:#E8EAF2;
+    --accent:#3B4C9E; --accent-deep:#2C3B80; --accent-soft:#3B4C9E55; --accent-bg:#3B4C9E14;
+    --gold:#C08A2E; --warn:#B06A1E; --warn-bg:#B06A1E1a; --ok:#3F7A48; --ok-bg:#3F7A481a;
+    --shadow:0 1px 2px #14161f10, 0 8px 24px -12px #14161f24;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+    --maxw:860px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:#0D0F16; --raised:#161923; --raised-2:#1C202C; --ink:#E9EBF3; --ink-soft:#B0B6C7; --ink-faint:#7C8398;
+      --line:#282D3B; --line-soft:#1F2430;
+      --accent:#7D8FE8; --accent-deep:#9BA8F2; --accent-soft:#7D8FE855; --accent-bg:#7D8FE818;
+      --gold:#E0AC5B; --warn:#E0A560; --warn-bg:#E0A56018; --ok:#79AE76; --ok-bg:#79AE7618;
+      --shadow:0 1px 2px #0000004d, 0 10px 30px -14px #00000080;
+    }
+  }
+  :root[data-theme="light"] {
+    --ground:#F1F2F7; --raised:#FBFBFE; --raised-2:#F4F5FA; --ink:#14161F; --ink-soft:#474C5E; --ink-faint:#7A8197;
+    --line:#DCDFEA; --line-soft:#E8EAF2;
+    --accent:#3B4C9E; --accent-deep:#2C3B80; --accent-soft:#3B4C9E55; --accent-bg:#3B4C9E14;
+    --warn:#B06A1E; --warn-bg:#B06A1E1a;
+    --shadow:0 1px 2px #14161f10, 0 8px 24px -12px #14161f24;
+  }
+  :root[data-theme="dark"] {
+    --ground:#0D0F16; --raised:#161923; --raised-2:#1C202C; --ink:#E9EBF3; --ink-soft:#B0B6C7; --ink-faint:#7C8398;
+    --line:#282D3B; --line-soft:#1F2430;
+    --accent:#7D8FE8; --accent-deep:#9BA8F2; --accent-soft:#7D8FE855; --accent-bg:#7D8FE818;
+    --warn:#E0A560; --warn-bg:#E0A56018;
+    --shadow:0 1px 2px #0000004d, 0 10px 30px -14px #00000080;
+  }
+
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; animation:none !important; } }
+  body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--sans); line-height:1.62; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 22px; }
+
+  .topbar { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--ground) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line-soft); }
+  .topbar .wrap { display:flex; align-items:center; justify-content:space-between; height:52px; }
+  .brandmark { font-family:var(--serif); font-weight:700; letter-spacing:.01em; font-size:15px; display:flex; align-items:center; gap:8px; }
+  .brandmark .sw { width:10px; height:10px; border-radius:999px; background:var(--accent); }
+  .toggle { border:1px solid var(--line); background:var(--raised); color:var(--ink-soft); font-family:var(--sans); font-size:12px; padding:6px 12px; border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; gap:6px; }
+  .toggle:hover { border-color:var(--accent-soft); color:var(--ink); }
+  .toggle:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+  .hero { padding:66px 0 44px; border-bottom:1px solid var(--line-soft); }
+  .eyebrow { font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep); font-weight:700; }
+  .hero h1 { font-family:var(--serif); font-weight:700; font-size:clamp(46px,10.5vw,86px); line-height:.96; margin:16px 0 10px; letter-spacing:-0.02em; text-wrap:balance; }
+  .hero h1 .em { color:var(--accent); }
+  .lede { font-size:clamp(16px,2.3vw,20px); color:var(--ink-soft); max-width:56ch; text-wrap:balance; margin:0; }
+  .arc { margin-top:22px; display:flex; flex-wrap:wrap; gap:7px; align-items:center; font-size:12.5px; color:var(--ink-soft); }
+  .arc span { background:var(--raised); border:1px solid var(--line); border-radius:999px; padding:5px 12px; }
+  .arc i { color:var(--ink-faint); font-style:normal; }
+
+  section { padding:46px 0; border-bottom:1px solid var(--line-soft); }
+  .step-num { font-family:var(--serif); font-size:13px; font-weight:700; color:var(--accent); background:var(--accent-bg); border:1px solid var(--accent-soft); width:30px; height:30px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; flex:none; }
+  .sechead { display:flex; align-items:center; gap:13px; margin:0 0 8px; }
+  h2 { font-family:var(--serif); font-weight:700; font-size:clamp(25px,4.6vw,34px); line-height:1.08; margin:0; letter-spacing:-0.01em; text-wrap:balance; }
+  .subhead { color:var(--ink-soft); font-size:15px; margin:0 0 20px; max-width:64ch; }
+  p { margin:0 0 13px; }
+  strong { color:var(--ink); font-weight:700; }
+
+  .quote { font-family:var(--serif); font-size:clamp(18px,3vw,24px); line-height:1.34; color:var(--ink); border-left:3px solid var(--accent); padding:4px 0 4px 20px; margin:6px 0 18px; text-wrap:balance; }
+  .quote small { display:block; font-family:var(--sans); font-size:14px; color:var(--ink-soft); margin-top:7px; font-weight:400; line-height:1.55; }
+  .plain { max-width:64ch; color:var(--ink-soft); }
+  .plain strong { color:var(--ink); }
+
+  .ilist { list-style:none; margin:8px 0 0; padding:0; display:grid; gap:9px; }
+  .ilist li { position:relative; padding-left:19px; font-size:14.5px; color:var(--ink-soft); }
+  .ilist li::before { content:""; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:999px; background:var(--accent); }
+  .ilist li strong { color:var(--ink); }
+
+  .benefit { background:var(--raised); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); margin-bottom:16px; }
+  .benefit:last-child { margin-bottom:0; }
+  .benefit .bhead { display:flex; align-items:center; gap:12px; padding:15px 20px; background:var(--accent-bg); border-bottom:1px solid var(--line-soft); }
+  .benefit .bhead .bic { font-size:24px; line-height:1; flex:none; }
+  .benefit .bhead .bt { font-family:var(--serif); font-size:20px; font-weight:700; line-height:1.18; }
+  .benefit .bhead .bt small { display:block; font-family:var(--sans); font-size:11.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-deep); }
+  .benefit .bbody { padding:16px 20px 18px; }
+  .prod { font-size:14px; color:var(--ink-soft); background:var(--raised-2); border:1px solid var(--line-soft); border-radius:10px; padding:12px 15px; margin-top:14px; line-height:1.55; }
+  .prod b { color:var(--ink); display:block; font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; margin-bottom:5px; }
+
+  .tscroll { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--line-soft); border-radius:12px; margin-top:4px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; min-width:520px; }
+  th, td { text-align:left; padding:11px 15px; border-bottom:1px solid var(--line-soft); vertical-align:top; }
+  thead th { font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-faint); background:var(--raised-2); }
+  tbody tr:last-child td { border-bottom:none; }
+  td.cond { font-weight:700; color:var(--ink); white-space:nowrap; font-variant-numeric:tabular-nums; }
+  td.camp { font-weight:700; color:var(--accent-deep); }
+  tbody td { color:var(--ink-soft); }
+
+  .opnote { display:flex; gap:11px; align-items:flex-start; background:var(--raised-2); border-left:3px solid var(--accent); border-radius:0 10px 10px 0; padding:12px 15px; font-size:14px; color:var(--ink-soft); margin-top:14px; }
+  .opnote .ic { font-size:17px; flex:none; }
+  .opnote strong { color:var(--ink); }
+  .softnote { font-size:13px; color:var(--ink-faint); font-style:italic; border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+
+  footer { padding:38px 0 60px; }
+  .foot-grid { display:flex; flex-wrap:wrap; gap:22px 44px; }
+  .foot-grid .fk { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); font-weight:700; margin-bottom:6px; }
+  .foot-grid .fv { font-size:14px; color:var(--ink-soft); }
+  .stamp { margin-top:26px; font-size:12px; color:var(--ink-faint); }
+
+  @media print {
+    :root { color-scheme:light; }
+    * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+    body { background:#fff; } .topbar { position:static; } .toggle { display:none; }
+    section, .benefit { break-inside:avoid; } .hero { padding-top:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brandmark"><span class="sw"></span>Temakeria · Out · Nov · Dez</span>
+    <button class="toggle" id="tt" aria-label="Alternar tema">◐ Tema</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Temakeria Universitária · 2026</div>
+    <h1>Outubro, Novembro e <span class="em">Dezembro</span></h1>
+    <p class="lede">O fechamento do ano da Temakeria em três meses: as datas de outubro com Araruama recém-inaugurada, o ENEM e a BlackBoard Friday em novembro, e o recesso, o verão e a fuga da ceia em dezembro.</p>
+    <div class="arc">
+      <span>Outubro · as datas</span><i>→</i>
+      <span>Gabarito da Fome</span><i>→</i>
+      <span>BlackBoard Friday</span><i>→</i>
+      <span>Recesso Aprovado</span><i>→</i>
+      <span>Modo Recesso</span><i>→</i>
+      <span>Fuga da Ceia</span>
+    </div>
+  </div>
+</header>
+
+<section id="outubro">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">1</span><h2>Outubro · as datas do mês</h2></div>
+    <p class="subhead">Araruama ocupa o mês inteiro com a campanha de inauguração, e três datas organizam o conteúdo.</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">📍</span><div class="bt"><small>Durante todo o mês</small>Araruama</div></div>
+      <div class="bbody">
+        <p class="plain" style="margin:0;">Ativação da campanha de inauguração ao longo do mês, com produto isca ativo na Landing Page, envio de brindes e cupons impressos.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🧒</span><div class="bt"><small>12/10</small>Dia das Crianças</div></div>
+      <div class="bbody">
+        <p class="plain">Essa data é para quem lembra de ter sido criança. O feriado emenda o fim de semana, e é um dos fins de semana do mês em que a casa inteira senta junto. Na Temakeria ninguém fica de fora da mesa.</p>
+        <ul class="ilist">
+          <li>Sobremesas e fritinhos em destaque, sem veicular imagem de criança nos canais digitais</li>
+          <li>Cupom <strong>DIA12</strong> para fomentar o canal próprio</li>
+          <li>Conteúdo com influenciadores, memes e trends</li>
+        </ul>
+        <div class="prod"><b>Produtos da data</b>Big Hot de Doce de Leite com Paçoca, harumaki doce (Romeu e Julieta, Doce de Leite, Nutella, Banana com Nutella), Hot Roll de Goiabada e Hot Roll de Banana com Nutella. Nos fritinhos: Temaki Empanado, Temaki Califórnia, Hot Roll Tradicional, Nachos, Cheddar Nachos e Yakissoba de Frango.</div>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">📚</span><div class="bt"><small>15/10</small>Dia dos Professores</div></div>
+      <div class="bbody">
+        <p class="plain">Professor não quer homenagem de calendário, quer ser tratado como quem entende. Por isso os escolhidos são os temakis com sobrenome, os que pedem repertório para escolher. Tataki é selado por fora e cru por dentro, a técnica de quem sabe a hora exata de parar. Crisp é textura, quebra e som. Shi-Sa leva o nome do leão guardião de Okinawa, a criatura que fica na porta protegendo a casa.</p>
+        <ul class="ilist">
+          <li>Temaki Salmão Tataki, Temaki Salmão Crisp e Temaki Shi-Sa</li>
+          <li>Cupom <strong>PROFESSOR</strong> para fomentar o canal próprio</li>
+          <li>Collab com o Vecchi e trends de professor que ama japa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🎃</span><div class="bt"><small>31/10</small>Halloween</div></div>
+      <div class="bbody">
+        <p class="plain" style="margin:0 0 6px;">Flambados e spicy, brincando com a estética do Halloween de forma bonita e não caricata.</p>
+        <div class="prod"><b>Produtos da data</b>Big Hot Roll de Salmão com Cubos, Joe de Salmão Flambado, Sushi de Salmão Flambado, Hot Roll Spicy e Temaki Salmão Spicy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="novembro">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">2</span><h2>Novembro · Últimos Créditos</h2></div>
+    <p class="subhead">Duas frentes, e só duas: o ENEM no começo do mês e a Black Friday no fim. Urgência, recompensa e oportunidade.</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">✏️</span><div class="bt"><small>08 e 15/11 · ENEM</small>Gabarito da Fome</div></div>
+      <div class="bbody">
+        <p class="plain">O melhor momento não é a prova, é o que vem depois dela. A marca não precisa falar de estudo de maneira óbvia: entra no momento emocional de quem acabou de sair de cinco horas de prova. Os Stories começam horas antes brincando com questões, alternativas e ansiedade, e quando a prova termina sai o gabarito que importa.</p>
+        <p class="quote">“Saiu o gabarito que importa agora.”<small>“Questão final: o que pedir depois de 5 horas de prova?” · “Resposta correta: não cozinhar.”</small></p>
+        <p class="plain">O cupom não aparece no primeiro frame. São três ou quatro questões e só o último entrega o <strong>Crédito Extra Pós-Prova</strong>, mantendo a mecânica que a marca já usa, de cupom divulgado exclusivamente pelos Stories.</p>
+        <div class="prod"><b>Produtos da data</b>Promo 1 (Temaki + 10 Hot Rolls), Big Hot com bebida e harumaki, e os Hits do iFood. Ofertas fáceis de entender, para consumo individual ou em dupla.</div>
+        <div class="opnote"><span class="ic">🗓️</span><div>Os feriados de <strong>02, 15 e 20 de novembro</strong> são janelas de delivery, com o dia 20 numa sexta puxando fim de semana prolongado. Trabalhamos comportamento de consumo e presença de mídia, sem transformar data cívica em tema promocional.</div></div>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🖤</span><div class="bt"><small>23 a 30/11</small>BlackBoard Friday</div></div>
+      <div class="bbody">
+        <p class="plain">Em vez da estética genérica de Black Friday, a Temakeria se apropria da data: <strong>o quadro de ofertas da Universitária</strong>. Quadro negro, giz, fórmulas, setas, preço riscado e anotação de professor, com fotografia forte de produto.</p>
+        <p class="plain">De <strong>23 a 26</strong>, o quadro vai sendo preenchido aos poucos nos Stories: uma oferta aparece, outra fica escondida, outra é revelada no dia seguinte. No <strong>dia 27</strong>, Feed, Reels, Stories e mídia paga trabalham juntos, com campanhas geolocalizadas no raio real de entrega de cada unidade.</p>
+        <p class="quote">Segunda Chamada · 30/11<small>“Perdeu a BlackBoard? A coordenação liberou uma última chance.”</small></p>
+        <p class="plain" style="margin:0;">A Cyber Monday é a conclusão, não a repetição: uma ou duas ofertas voltam por 24 horas, criando escassez e fechamento.</p>
+        <div class="prod"><b>Produtos da campanha</b>80 Hot Rolls, Universitário Sênior, combinado de 40 peças, combos com dois Temakis e os combos de Yakissoba. Produtos que sustentam ticket e criam imagem capaz de interromper o scroll.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dezembro">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">3</span><h2>Dezembro · Recesso Aprovado</h2></div>
+    <p class="subhead">A energia vira por completo. Sai prova, entram férias, confraternização, calor e casa cheia. A marca deixa de vender produto e passa a ocupar ocasião de consumo.</p>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🎓</span><div class="bt"><small>01 a 20/12</small>Recesso Aprovado</div></div>
+      <div class="bbody">
+        <p class="plain">Fim de semestre, férias e confraternização, que aqui não precisa ser corporativa: pode ser faculdade, amigos, escritório, loja ou família. O foco sai do pedido individual e vai para o pedido compartilhado, e a comunicação deixa claro o que serve para uma pessoa, para duas e para a turma.</p>
+        <p class="quote">“Resultado final: ninguém vai cozinhar.”<small>“Presença facultativa. Fome obrigatória.” · “Recesso aprovado. Chama a turma.” · “Trabalho em grupo que finalmente deu certo.”</small></p>
+        <p class="plain" style="margin:0;">Ativação <strong>Chamada da Turma</strong>: marcar nos comentários quem precisa estar naquele pedido. Simples, coerente com a marca e gera compartilhamento sem depender de sorteio.</p>
+        <div class="prod"><b>Produtos do período</b>80 Hot Rolls, Universitário Sênior, combinado de 40 peças e combos para duas pessoas, apresentados como ocasião e não como tamanho.</div>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">☀️</span><div class="bt"><small>A partir de 21/12</small>Modo Recesso · Verão</div></div>
+      <div class="bbody">
+        <p class="plain">O verão começa em 21 de dezembro e a fotografia muda com ele: mais solar, fresca, colorida e diurna. Poke durante o dia, Hot Roll e combos à noite, ampliando as ocasiões de consumo sem mudar a personalidade da marca.</p>
+        <p class="quote">“Projeto verão: pedir o que você estiver com vontade.”</p>
+        <div class="prod"><b>Produtos do período</b>Poke Salmão Tradicional, Poke do Chef, Mexicano, Shimeji, Monte Seu Poke e os Temakis sem arroz.</div>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <div class="bhead"><span class="bic">🦃</span><div class="bt"><small>25 a 30/12</small>Fuga da Ceia</div></div>
+      <div class="bbody">
+        <p class="plain">Não é campanha de Natal japonês. É a campanha de quem já cansou da comida de Natal. A noite do dia 25, o dia 26 e todo o período entre Natal e Ano-Novo viram uma grande janela de delivery.</p>
+        <p class="quote">“A gente também gosta de comida de Natal. Até a terceira refeição.”<small>“O peru ainda está na geladeira. Você não precisa estar comendo ele.” · “Já que fugiu da ceia, foge direito.”</small></p>
+        <div class="prod"><b>Produtos do período</b>Temakis, Hot Rolls, Big Hot e combos, com a sobremesa no upsell. O <strong>Big Hot de doce de leite com paçoca</strong> é o destaque, novidade, brasileiro e inesperado dentro de uma temakeria, apoiado pelos harumakis de doce de leite, Romeu e Julieta, banana com Nutella e Nutella.</div>
+        <div class="opnote"><span class="ic">🎆</span><div><strong>31/12 · Último Pedido do Ano</strong> fecha a temporada, condicionado ao horário real de funcionamento de cada unidade.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calendario">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">4</span><h2>O calendário comercial</h2></div>
+    <p class="subhead">Os três meses numa linha só.</p>
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Período</th><th>Campanha</th><th>Produto e foco</th></tr></thead>
+        <tbody>
+          <tr><td class="cond">12/10</td><td class="camp">Dia das Crianças</td><td>Sobremesas e fritinhos · cupom DIA12</td></tr>
+          <tr><td class="cond">15/10</td><td class="camp">Dia dos Professores</td><td>Temakis com sobrenome · cupom PROFESSOR</td></tr>
+          <tr><td class="cond">31/10</td><td class="camp">Halloween</td><td>Flambados e spicy</td></tr>
+          <tr><td class="cond">01–07/11</td><td class="camp">Últimos Créditos · aquecimento</td><td>Temakis, Hot Rolls e Hits do iFood · alcance</td></tr>
+          <tr><td class="cond">08 e 15/11</td><td class="camp">Gabarito da Fome · ENEM</td><td>Promo 1 e Big Hot com bebida · conversão pós-prova</td></tr>
+          <tr><td class="cond">23–26/11</td><td class="camp">Esquenta BlackBoard</td><td>40 peças, 80 Hot Rolls e Universitário Sênior · desejo</td></tr>
+          <tr><td class="cond">27/11</td><td class="camp">BlackBoard Friday</td><td>Grandes combos · maior pico de venda do período</td></tr>
+          <tr><td class="cond">30/11</td><td class="camp">Segunda Chamada · Cyber Monday</td><td>Uma ou duas ofertas por 24 horas</td></tr>
+          <tr><td class="cond">01–20/12</td><td class="camp">Recesso Aprovado</td><td>Combos para compartilhar · pedido em grupo</td></tr>
+          <tr><td class="cond">21–24/12</td><td class="camp">Modo Recesso · Verão</td><td>Pokes e Temakis sem arroz · novas ocasiões</td></tr>
+          <tr><td class="cond">25–30/12</td><td class="camp">Fuga da Ceia</td><td>Temakis, Hot Rolls, Big Hot e sobremesas</td></tr>
+          <tr><td class="cond">31/12</td><td class="camp">Último Pedido do Ano</td><td>Produto selecionado · fechamento da temporada</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="softnote">As datas do ENEM e o funcionamento das unidades em 24, 25 e 31 de dezembro precisam do check final da operação antes das peças.</p>
+  </div>
+</section>
+
+<section id="canais">
+  <div class="wrap">
+    <div class="sechead"><span class="step-num">5</span><h2>Os canais</h2></div>
+    <p class="plain">O Instagram cria desejo e narrativa, os Stories fazem a ativação e liberam o benefício, os Reels dão alcance e a mídia paga leva cada campanha para dentro da área real de entrega de cada unidade.</p>
+    <p class="plain">Os Hits exclusivos do iFood, Temaki Salmão Completo com Coca-Cola, Yakissoba Misto com Coca-Cola e Big Hot de Salmão com Coca-Cola, entram como produto de aquisição: o cliente chega por uma oferta fácil de entender e depois a comunicação trabalha combo maior, sobremesa e recompra no canal próprio.</p>
+    <p class="plain" style="margin:0;"><strong>Novembro captura atenção e acelera venda. Dezembro amplia ocasião, compartilhamento e frequência.</strong> Não são dois meses soltos, são uma temporada.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="fk">Marca</div><div class="fv">Temakeria Universitária</div></div>
+      <div><div class="fk">Período</div><div class="fv">Outubro, novembro e dezembro de 2026</div></div>
+      <div><div class="fk">Destaques</div><div class="fv">Gabarito da Fome · BlackBoard Friday · Recesso Aprovado</div></div>
+      <div><div class="fk">Feito por</div><div class="fv">Marketing — Grupo ØLV</div></div>
+    </div>
+    <p class="stamp">Documento interno da campanha · versão de trabalho para aprovação.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('tt');
+    function cur() { var a = root.getAttribute('data-theme'); if (a) return a; return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    btn.addEventListener('click', function () { root.setAttribute('data-theme', cur() === 'dark' ? 'light' : 'dark'); });
+  })();
+</script>
+</body>
+</html>
